@@ -10,9 +10,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import Login from "./components/LoginForm";
+import Login from "./components/Login";
 import Footer from "./components/Footer";
-import SearchResults from "./components/SearchResults";
+// import SearchResults from "./components/SearchResults";
 import Signup from "./components/Signup";
 import Profile from "./components/Profile";
 
@@ -46,16 +46,16 @@ function App() {
         <div className="flex-column justify-flex-start min-100-vh">
           <Navbar />
           <div className="container">
-            <Route exact path="/">
+            {/* <Route exact path="/">
               <Home />
             </Route>
             <Route exact path="/login">
               <Login />
-            </Route>
+            </Route> */}
             <Route exact path="/signup">
               <Signup />
             </Route>
-            <Route exact path="/profile">
+            {/* <Route exact path="/profile">
               <Profile />
             </Route>
             <Route exact path="/profiles/:username">
@@ -63,7 +63,7 @@ function App() {
             </Route>
             <Route exact path="/profiles/:state">
               <SearchResults />
-            </Route>
+            </Route> */}
           </div>
           <Footer />
         </div>

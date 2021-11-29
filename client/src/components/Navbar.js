@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-// import { Link } from "react-router-dom";
-// import { styled, alpha } from "@mui/material/styles";
+import { Link } from "react-router-dom";
+import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -10,13 +10,13 @@ import Typography from "@mui/material/Typography";
 import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-// import MenuIcon from "@mui/icons-material/Menu";
-// import SearchIcon from "@mui/icons-material/Search";
-// import AccountCircle from "@mui/icons-material/AccountCircle";
+import MenuIcon from "@mui/icons-material/Menu";
+import SearchIcon from "@mui/icons-material/Search";
+import AccountCircle from "@mui/icons-material/AccountCircle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import LoginIcon from "@mui/icons-material/Login";
-import Link from "@mui/material/Link";
+// import Link from "@mui/material/Link";
 import { teal, indigo } from '@mui/material/colors';
 
 const primary = indigo[500]
