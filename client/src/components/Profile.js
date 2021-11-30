@@ -9,7 +9,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 // /import Carousel from "react-material-ui-carousel";
 // import CarouselSlide from "react-material-ui-carousel";
-import Link from "@mui/material/Link";
+import { Link } from "react-router-dom";
 import { teal, indigo } from "@mui/material/colors";
 
 // import React from 'react';
@@ -154,9 +154,16 @@ const Profile = () => {
                         {" "}
                         {user.bio}
                         &nbsp;
-                        <Typography variant="h5" color="inherit" noWrap>
-                            Reservation Fee : {user.reservationCost}
-                        </Typography>
+                    </Typography>
+                    <Typography variant="h4"
+                        align="center"
+                        color="text.secondary"
+                        paragraph
+                        sx={{
+                            color: primaryDark,
+                        }}
+                    >
+                        Reservation Fee : ${user.reservationCost}
                     </Typography>
                     <Stack
                         sx={{ pt: 4 }}
@@ -172,7 +179,7 @@ const Profile = () => {
                             borderWidth: "1px",
                         }} href="/update"
                             variant="outlined">Edit the post</Button> */}
-                        <Button
+                        {/* <Button
                             sx={{
                                 bgcolor: primaryDark,
                             }}
@@ -180,8 +187,8 @@ const Profile = () => {
                             variant="contained"
                         >
                             More of my work
-                        </Button>
-                        <Button
+                        </Button> */}
+                        {/* <Button
                             sx={{
                                 bgcolor: primaryLight,
                                 color: primaryDark,
@@ -194,21 +201,47 @@ const Profile = () => {
                             Connect with me
                             {/* <Mailto email={user.email}>
                                 Connect with me </Mailto> */}
+                        {/* </Button> */}
+                        <Button
+                            sx={{
+                                bgcolor: primaryLight,
+                                color: primaryDark,
+                                border: primaryDark,
+                                borderStyle: "solid",
+                                borderWidth: "1px",
+                            }}
+                            component={Link}
+                            to={{
+                                pathname: user.link,
+                            }}
+                            target="_blank"
+                            variant="outlined"
+                        >
+                            Connect with me
                         </Button>
                         <Button
                             sx={{
-                                bgcolor: primaryDark
-                            }} variant="contained">Make appointment with me</Button>
+                                bgcolor: primaryDark,
+                            }}
+                            variant="contained"
+                            component={Link}
+                            target="_blank"
+                            to={{
+                                pathname: `https://calendly.com/${user.companyName}`,
+                            }}
+                        >
+                            Make appointment with me
+                        </Button>
                     </Stack>
 
                 </Box>
 
                 <Box maxWidth="lg"
                     sx={{
-                        paddingLeft: 90,
-                        m: 5
+                        display: "flex",
+                        justifyContent: "center",
                     }}>
-                    <img src={user.image}></img>
+                    <img className="profileImg" src={user.image} alt="Image from Photographer"></img>
                     {/* <Carousel>
                         {itemData.map((item) => (
                             <div>

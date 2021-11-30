@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Photographer Phinder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![MIT License Badge](https://img.shields.io/badge/License-MIT_License-blue)](https://img.shields.io/badge/License-MIT_License-blue)
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+Ever wanted to find the perfect photographer to capture life's special moments or promote your photography business to those nearby? Photographer Phinder is the web application for you! Created using most notably React, Express.js, MongoDB, and GraphQL, Matierial UI use this application to search for photographers near you or create a profile to advertise for your business. Business owners can write all information they choose about themselves when signing up to best promote their business. Users can view profiles and even contact or schedule and appointment with the photographer of their choice.
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Contact](#contact)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation
 
-### `npm test`
+Clone the respository and run "npm i" in the command line.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `npm run build`
+View the homepage as a client and explore various profiles and click options to contact or schedule. As a photographer, sign up to create a profile or login to view what you currently have (and update in the future).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Credits
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+With any questions please contact the contributors: Bryanna Vinge [(Bryanna711)](https://github.com/Bryanna711), Rose Luu [(RoseLuu)](https://github.com/RoseLuu), Mark Selyuzhitskiy [(marksely)](https://github.com/marksely), and Rachel Cianfichi [(cianfich1016)](https://github.com/cianfich1016)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## License
 
-### `npm run eject`
+License for this project: [MIT License](https://choosealicense.com/licenses/mit/)
+GitHubGitHub
+Bryanna711 - Overview
+I am a creative mind who has moved into the technical world, I hold multiple degrees in the fine arts as well as a certificate in Full Stack Development. - Bryanna711
+GitHubGitHub
+cianfich1016 - Overview
+Current Full Stack Web Development student with GIT. I love to create and look forward to being a big part of the future of technological advancement. - cianfich1016
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Images
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img width="1099" alt="Screen Shot 2021-11-30 at 15 51 18" src="https://user-images.githubusercontent.com/90050383/144127610-263e2743-cb68-458a-aef7-4a4d54b74302.png">
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Links
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+https://github.com/Bryanna711/photophinder2
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://radiant-beyond-44177.herokuapp.com/

@@ -25,8 +25,11 @@ import Container from "@mui/material/Container";
 // import { loginUser } from '../utils/API';
 
 import { teal, indigo } from '@mui/material/colors';
-const secondaryLight = teal[200]
-const primary = indigo[500]
+const primary = indigo[500];
+const primaryLight = indigo[200];
+const primaryDark = indigo[900];
+const secondary = teal[500];
+const secondaryLight = teal[200];
 
 const LoginUser = () => {
     const [userFormData, setUserFormData] = useState({ email: "", password: "" });
@@ -130,14 +133,17 @@ const LoginUser = () => {
                                     </Typography>
                                 </Grid>
                                 &nbsp;
-                                <Grid item>
+                                <Grid item >
                                     {/* {data ? (
                                         <p>
                                             Success! You may now head{' '}
                                             <Link to="/">back to the homepage.</Link>
                                         </p>
                                     ) : ( */}
-                                    <form validated={validated} onSubmit={handleFormSubmit}>
+                                    <form validated={validated} onSubmit={handleFormSubmit}
+                                        sx={{
+                                            bgcolor: primary
+                                        }}>
                                         {/* <Alert
                                             dismissible
                                             onClose={() => setShowAlert(false)}
@@ -204,9 +210,8 @@ const LoginUser = () => {
                                             onChange={handleChange}
                                         />
                                         <button
-                                            className="btn btn-block btn-primary"
-                                            style={{ cursor: 'pointer' }}
                                             type="submit"
+                                            className="login"
                                         >
                                             Submit
                                         </button>
