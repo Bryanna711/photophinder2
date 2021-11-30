@@ -567,9 +567,17 @@ const SignUp = () => {
                             <input
                                 className="form-input"
                                 placeholder="Your State"
-                                name="Location"
+                                name="location"
                                 type="text"
                                 value={values.location}
+                                onChange={handleChange}
+                            />
+                            <input
+                                className="form-input"
+                                placeholder="Your Specialty"
+                                name="photoType"
+                                type="text"
+                                value={values.photoType}
                                 onChange={handleChange}
                             />
                             <input
