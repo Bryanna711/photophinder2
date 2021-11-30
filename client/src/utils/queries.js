@@ -53,7 +53,7 @@ export const QUERY_USER_LOCATION = gql`
 
 export const QUERY_ALL_USERS = gql`
   query user {
-    user {
+    allusers {
       _id
       username
       email

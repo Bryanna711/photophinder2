@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
@@ -28,11 +28,21 @@ import { teal, indigo } from '@mui/material/colors';
 const secondaryLight = teal[200]
 const primary = indigo[500]
 
-const Login = () => {
+const LoginUser = () => {
     const [userFormData, setUserFormData] = useState({ email: "", password: "" });
-    const [login, { error, data }] = useMutation(LOGIN_USER);
+    const [login, { error }] = useMutation(LOGIN_USER);
+    const [showAlert, setShowAlert] = useState(false);
+    const [validated] = useState(false);
 
-    // const [validated] = useState(false);
+    useEffect(() => {
+        if (error) {
+            setShowAlert(true);
+        } else {
+            setShowAlert(false);
+        }
+    }, [error]);
+
+
     //   const [showAlert, setShowAlert] = useState(f
 
     const handleChange = (event) => {
@@ -45,12 +55,12 @@ const Login = () => {
         console.log(userFormData)
 
         //  check if form has everything (as per react-bootstrap docs)
-        // const form = event.currentTarget;
-        // if (form.checkValidity() === false) {
-        //     event.preventDefault();
-        //     event.stopPropagation();
-        // }
-        // console.log(userFormData);
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        console.log(userFormData);
 
         // if (form.email === "admin@littech.in" && form.password === "secret") {
         //   this.props.history.push("/home");
@@ -69,7 +79,7 @@ const Login = () => {
             Auth.login(data.login.token);
         } catch (err) {
             console.error(err);
-            //   setShowAlert(true);
+            // setShowAlert(true);
         }
 
         setUserFormData({
@@ -121,20 +131,24 @@ const Login = () => {
                                 </Grid>
                                 &nbsp;
                                 <Grid item>
-                                    {data ? (
+                                    {/* {data ? (
                                         <p>
                                             Success! You may now head{' '}
                                             <Link to="/">back to the homepage.</Link>
                                         </p>
-                                    ) : (
-                                        <form
-                                            //   noValidate
-                                            //   validated={validated}
-                                            onSubmit={handleFormSubmit}
+                                    ) : ( */}
+                                    <form validated={validated} onSubmit={handleFormSubmit}>
+                                        {/* <Alert
+                                            dismissible
+                                            onClose={() => setShowAlert(false)}
+                                            show={showAlert}
+                                            variant="danger"
                                         >
-                                            <Grid container direction="column" spacing={2}>
-                                                {/* <Grid item> */}
-                                                {/* <TextField sx={{
+                                            Something went wrong with your login credentials!
+                                        </Alert> */}
+                                        {/* <Grid container direction="column" spacing={2}> */}
+                                        {/* <Grid item> */}
+                                        {/* <TextField sx={{
                                                         color: primary
                                                     }}
                                                         type="email"
@@ -162,7 +176,7 @@ const Login = () => {
                                                         required
                                                     />
                                                 </Grid> */}
-                                                {/* <Grid item>
+                                        {/* <Grid item>
                                                     <Button
                                                         variant="contained"
                                                         color="primary"
@@ -172,39 +186,39 @@ const Login = () => {
                                                         Submit
                                                     </Button>
                                                 </Grid>// */}
-                                            </Grid>
-                                            <input
-                                                className="form-input"
-                                                placeholder="Your email"
-                                                name="email"
-                                                type="email"
-                                                value={userFormData.email}
-                                                onChange={handleChange}
-                                            />
-                                            <input
-                                                className="form-input"
-                                                placeholder="******"
-                                                name="password"
-                                                type="password"
-                                                value={userFormData.password}
-                                                onChange={handleChange}
-                                            />
-                                            <button
-                                                className="btn btn-block btn-primary"
-                                                style={{ cursor: 'pointer' }}
-                                                type="submit"
-                                            >
-                                                Submit
-                                            </button>
-                                        </form>
-                                    )}
+                                        {/* </Grid> */}
+                                        <input
+                                            className="form-input"
+                                            placeholder="Your email"
+                                            name="email"
+                                            type="email"
+                                            value={userFormData.email}
+                                            onChange={handleChange}
+                                        />
+                                        <input
+                                            className="form-input"
+                                            placeholder="******"
+                                            name="password"
+                                            type="password"
+                                            value={userFormData.password}
+                                            onChange={handleChange}
+                                        />
+                                        <button
+                                            className="btn btn-block btn-primary"
+                                            style={{ cursor: 'pointer' }}
+                                            type="submit"
+                                        >
+                                            Submit
+                                        </button>
+                                    </form>
+                                    {/* )} */}
                                 </Grid>
                                 &nbsp;
                                 <Grid item>
                                     <Typography>
                                         {" "}
                                         Don't have an account?
-                                        <Link href="/signup"> Sign Up</Link>
+                                        <Link to="/signup"> Sign Up </Link>
                                     </Typography>
                                 </Grid>
                             </Container>
@@ -222,4 +236,4 @@ const Login = () => {
     );
 };
 
-export default Login
+export default LoginUser

@@ -33,8 +33,8 @@ const secondaryLight = teal[200];
 const Home = () => {
 
     const { loading, data } = useQuery(QUERY_ALL_USERS);
-    const users = data?.users || [];
-
+    const users = data?.allusers || [];
+    console.log(users)
 
     // const [search, setSearch] = useState('');
     // console.log(search)
@@ -180,7 +180,7 @@ const Home = () => {
                                 or are looking to update your headshots, or maybe Fido needs a new portrait on the wall, let Photographer Phinder
                                 help you find that perfect person who will imortalize your memories!</p>
 
-                            <p> Not sure how to start?Photographer Phinder can help narrow the field, just let us know either what state you are looking
+                            <p> Not sure how to start? Photographer Phinder can help narrow the field, just let us know either what state you are looking
                                 to find a talented photographer or what type of photography you're looking for. We categorize our photographers by their identified
                                 specialty, choose from:
                             </p>
@@ -211,6 +211,57 @@ const Home = () => {
                     </Box>
                 </Grid>
                 <Grid item xs={12}>
+                    <Box sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        p: 1,
+                        m: 1,
+                        bgcolor: primaryLight,
+                        borderStyle: "solid",
+                        borderColor: primaryDark,
+                        borderWidth: "5px",
+                        borderRadius: "10px"
+                    }}>
+                        {/* {
+                            users.map((user) => (
+                                <Card sx={{ maxWidth: 345 }} key={user.id}>
+                                    <CardActionArea>
+                                        <CardMedia
+                                            component="img"
+                                            height="140"
+                                            image={user.image}
+                                            alt=""
+                                        />
+                                        <CardContent sx={{
+                                            bgcolor: primaryLight
+                                        }}>
+                                            <Typography gutterBottom variant="h5" component="div">
+                                                Name : {user.companyName}
+                                                Specialty: {user.photoType}
+                                                Location : {user.location}
+                                            </Typography>
+                                            <Link
+                                                to={`/profiles/${user.username}`}
+                                            >
+                                                <Button></Button>
+                                                View more of this photographers information!
+                                            </Link>
+                                        </CardContent>
+                                    </CardActionArea>
+                                    <CardActions>
+                                    </CardActions>
+                                </Card>
+                            ))
+                        } */}
+                        {loading ? (
+                            <div>Loading...</div>
+                        ) : (
+                            <Photographers
+                                users={users} />
+                        )}
+                    </Box>
+                </Grid>
+                {/* <Grid item xs={12}>
                     <Box
                         sx={{
                             display: "flex",
@@ -225,11 +276,10 @@ const Home = () => {
                                 users={users} />
                         )}
                     </Box>
-                </Grid>
+                </Grid> */}
             </Grid>
-        </Container >
+        </Container>
     );
-}
-
+};
 
 export default Home

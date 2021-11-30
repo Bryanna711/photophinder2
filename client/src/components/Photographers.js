@@ -42,7 +42,7 @@ const Photographers = ({ users }) => {
             }}>
                 {users &&
                     users.map((user) => (
-                        <Card sx={{ maxWidth: 345 }} key={user.id}>
+                        <Card sx={{ maxWidth: 345 }} key={user._id}>
                             <CardActionArea>
                                 <CardMedia
                                     component="img"
