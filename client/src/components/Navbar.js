@@ -15,7 +15,7 @@ import SearchIcon from "@mui/icons-material/Search";
 //import AccountCircle from "@mui/icons-material/AccountCircle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MoreIcon from "@mui/icons-material/MoreVert";
-//import LoginIcon from "@mui/icons-material/Login";
+import LoginIcon from "@mui/icons-material/Login";
 // import Link from "@mui/material/Link";
 import { teal, indigo } from '@mui/material/colors';
 

@@ -17,6 +17,23 @@ export const QUERY_USER = gql`
   }
 `;
 
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      username
+      email
+      companyName
+      bio
+      photoType
+      location
+      link
+      reservationCost
+      image
+    }
+  }
+`;
+
 export const QUERY_USER_LOCATION = gql`
   query user($location: String!) {
     user(location: $location) {
