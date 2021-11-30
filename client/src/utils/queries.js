@@ -50,3 +50,20 @@ export const QUERY_USER_LOCATION = gql`
     }
   }
 `;
+
+export const QUERY_ALL_USERS = gql`
+  query user {
+    user {
+      _id
+      username
+      email
+      companyName
+      bio
+      photoType
+      location
+      link
+      reservationCost
+      image
+    }
+  }
+`;
