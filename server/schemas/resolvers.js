@@ -22,8 +22,9 @@ const resolvers = {
     },
 
     Mutation: {
-        addUser: async (parent, { username, email, password, companyName, bio, photoType, location, link, reservationCost, image }) => {
-            const user = await User.create({ username, email, password, companyName, bio, photoType, location, link, reservationCost, image });
+        addUser: async (parent, { username, email, password, companyName, bio, photoType, location, link, reservationCost }) => {
+            console.log("mutation here")
+            const user = await User.create({ username, email, password, companyName, bio, photoType, location, link, reservationCost });
             const token = signToken(user);
             return { token, user };
         },

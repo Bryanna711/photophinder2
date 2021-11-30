@@ -22,20 +22,19 @@ const typeDefs = gql`
   }
 
   type Query {
-    users(location: String!) : [User]!
+    users(location: String) : [User]!
     allusers : [User]!
     user(username: String!): User
     me: User
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!, companyName: String!,
-      bio: String!,
-      photoType: String!,
-      location: String!,
-      link: String!,
-      reservationCost: Int!,
-      image: String): Auth
+    addUser(username: String!, email: String!, password: String!, companyName: String,
+      bio: String,
+      photoType: String,
+      location: String,
+      link: String,
+      reservationCost: String): Auth
     login(email: String!, password: String!): Auth
   }
 `;

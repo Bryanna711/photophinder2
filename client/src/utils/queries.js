@@ -13,6 +13,7 @@ export const QUERY_USER = gql`
       link
       reservationCost
       image
+
     }
   }
 `;
@@ -30,6 +31,7 @@ export const QUERY_ME = gql`
       link
       reservationCost
       image
+   
     }
   }
 `;
@@ -47,6 +49,7 @@ export const QUERY_USER_LOCATION = gql`
       link
       reservationCost
       image
+  
     }
   }
 `;
@@ -64,6 +67,7 @@ export const QUERY_ALL_USERS = gql`
       link
       reservationCost
       image
+
     }
   }
 `;
