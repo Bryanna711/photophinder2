@@ -33,8 +33,8 @@ const secondaryLight = teal[200];
 const Home = () => {
 
     const { loading, data } = useQuery(QUERY_ALL_USERS);
-    const users = data?.users || [];
-    console.log(data)
+    const users = data?.allusers || [];
+    console.log(users)
 
     // const [search, setSearch] = useState('');
     // console.log(search)
