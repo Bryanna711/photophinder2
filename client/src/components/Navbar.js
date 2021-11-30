@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { styled, alpha } from "@mui/material/styles";
+// import { Link } from "react-router-dom";
+// import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -10,13 +10,13 @@ import Typography from "@mui/material/Typography";
 import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
+// import MenuIcon from "@mui/icons-material/Menu";
+// import SearchIcon from "@mui/icons-material/Search";
 //import AccountCircle from "@mui/icons-material/AccountCircle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import LoginIcon from "@mui/icons-material/Login";
-// import Link from "@mui/material/Link";
+import Link from "@mui/material/Link";
 import { teal, indigo } from '@mui/material/colors';
 
 const primary = indigo[500]
@@ -26,24 +26,24 @@ const secondary = teal[500]
 const secondaryLight = teal[200]
 const secondaryDark = teal[700]
 
-export default function PrimarySearchAppBar() {
+const Navbar = () => {
     // set modal display state
 
-    //   const [anchorEl, setAnchorEl] = useState(null);
+    // const [anchorEl, setAnchorEl] = useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
-    //   const isMenuOpen = Boolean(anchorEl);
+    // const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-    //   const handleProfileMenuOpen = (event) => {
+    // const handleProfileMenuOpen = (event) => {
     //     setAnchorEl(event.currentTarget);
-    //   };
+    // };
 
-    //   const handleMenuClose = () => {
+    // const handleMenuClose = () => {
     //     setAnchorEl(null);
     //     setShowModal(true);
     //     handleMobileMenuClose();
-    //   };
+    // };
 
     const handleMobileMenuOpen = (event) => {
         setMobileMoreAnchorEl(event.currentTarget);
@@ -53,26 +53,26 @@ export default function PrimarySearchAppBar() {
     };
 
     const menuId = "primary-search-account-menu";
-    //   const renderMenu = (
+    // const renderMenu = (
     //     <Menu
-    //       anchorEl={anchorEl}
-    //       anchorOrigin={{
-    //         vertical: "top",
-    //         horizontal: "right",
-    //       }}
-    //       id={menuId}
-    //       keepMounted
-    //       transformOrigin={{
-    //         vertical: "top",
-    //         horizontal: "right",
-    //       }}
-    //       open={isMenuOpen}
-    //       onClose={handleMenuClose}
+    //         anchorEl={anchorEl}
+    //         anchorOrigin={{
+    //             vertical: "top",
+    //             horizontal: "right",
+    //         }}
+    //         id={menuId}
+    //         keepMounted
+    //         transformOrigin={{
+    //             vertical: "top",
+    //             horizontal: "right",
+    //         }}
+    //         open={isMenuOpen}
+    //         onClose={handleMenuClose}
     //     >
-    //       <MenuItem onClick={handleMenuClose}>Login</MenuItem>
-    //       <MenuItem onClick={handleMenuClose}>SignUp</MenuItem>
+    //         <MenuItem onClick={handleMenuClose}>Login</MenuItem>
+    //         <MenuItem onClick={handleMenuClose}>SignUp</MenuItem>
     //     </Menu>
-    //   );
+    // );
 
     const mobileMenuId = "primary-search-account-menu-mobile";
     const renderMobileMenu = (
@@ -178,3 +178,4 @@ export default function PrimarySearchAppBar() {
         </>
     );
 }
+export default Navbar
