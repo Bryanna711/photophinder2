@@ -56,9 +56,10 @@ const Photographers = ({ users }) => {
                                     <Typography gutterBottom variant="h5" component="div">
                                         Name : {user.companyName}
                                         Specialty: {user.photoType}
+                                        Location : {user.location}
                                     </Typography>
                                     <Link
-                                        to={`/profile/${user.id}`}
+                                        to={`/profiles/${user.username}`}
                                     >
                                         <Button></Button>
                                         View more of this photographers information!
