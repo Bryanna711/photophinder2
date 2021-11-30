@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import MenuItem from "@mui/material/MenuItem";
+// import TextField from "@mui/material/TextField";
+// import MenuItem from "@mui/material/MenuItem";
 import Container from "@mui/material/Container";
-import IconButton from "@mui/material/IconButton";
-import Button from "@mui/material/Button";
+// import IconButton from "@mui/material/IconButton";
+// import Button from "@mui/material/Button";
 // import Input from '@mui/material/Input';
 import Grid from "@mui/material/Grid";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputLabel from "@mui/material/InputLabel";
-import InputAdornment from "@mui/material/InputAdornment";
-import FormHelperText from '@mui/material/FormHelperText';
-// import Link from "@mui/material/Link";
-import FormControl from "@mui/material/FormControl";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
+// import OutlinedInput from "@mui/material/OutlinedInput";
+// import InputLabel from "@mui/material/InputLabel";
+// import InputAdornment from "@mui/material/InputAdornment";
+// import FormHelperText from '@mui/material/FormHelperText';
+// // import Link from "@mui/material/Link";
+// import FormControl from "@mui/material/FormControl";
+// import Visibility from "@mui/icons-material/Visibility";
+// import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { teal, indigo } from "@mui/material/colors";
 
 
-import Select from '@mui/material/Select';
+// import Select from '@mui/material/Select';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
@@ -32,227 +32,227 @@ const secondaryLight = teal[200];
 
 //this is a post
 
-const photoType = [
-    {
-        value: "Wedding",
-        label: "Wedding",
-    },
-    {
-        value: "Maternity",
-        label: "Maternity",
-    },
-    {
-        value: "Family",
-        label: "Family",
-    },
-    {
-        value: "HeadShot",
-        label: "HeadShot",
-    },
-    {
-        value: "Pet",
-        label: "Pet",
-    },
-    {
-        value: "Other",
-        label: "Other",
-    },
-];
+// const photoType = [
+//     {
+//         value: "Wedding",
+//         label: "Wedding",
+//     },
+//     {
+//         value: "Maternity",
+//         label: "Maternity",
+//     },
+//     {
+//         value: "Family",
+//         label: "Family",
+//     },
+//     {
+//         value: "HeadShot",
+//         label: "HeadShot",
+//     },
+//     {
+//         value: "Pet",
+//         label: "Pet",
+//     },
+//     {
+//         value: "Other",
+//         label: "Other",
+//     },
+// ];
 
-const locations = [
-    {
-        value: "Alabama",
-        label: "Alabama",
-    },
-    {
-        value: "Alaska",
-        label: "Alaska",
-    },
-    {
-        value: "Arizona",
-        label: "Arizona",
-    },
-    {
-        value: "Arkansas",
-        label: "Arkansas",
-    },
-    {
-        value: "California",
-        label: "California",
-    },
-    {
-        value: "Colorado",
-        label: "Colorado",
-    },
-    {
-        value: "Connecticut",
-        label: "Connecticut",
-    },
-    {
-        value: "Delaware",
-        label: "Delaware",
-    },
-    {
-        value: "Florida",
-        label: "Florida",
-    },
-    {
-        value: "Georgia",
-        label: "Georgia",
-    },
-    {
-        value: "Idaho",
-        label: "Idaho",
-    },
-    {
-        value: "Illinois",
-        label: "Illinois",
-    },
-    {
-        value: "Indiana",
-        label: "Indiana",
-    },
-    {
-        value: "Iowa",
-        label: "Iowa",
-    },
-    {
-        value: "Kansas",
-        label: "Kansas",
-    },
-    {
-        value: "Kentucky",
-        label: "Kentucky",
-    },
-    {
-        value: "Maine",
-        label: "Maine",
-    },
-    {
-        value: "Maryland",
-        label: "Maryland",
-    },
-    {
-        value: "Massachusetts",
-        label: "Massachusetts",
-    },
-    {
-        value: "Michigan",
-        label: "Michigan",
-    },
-    {
-        value: "Minnesota",
-        label: "Minnesota",
-    },
-    {
-        value: "Mississippi",
-        label: "Mississippi",
-    },
-    {
-        value: "Missouri",
-        label: "Missouri",
-    },
-    {
-        value: "Montana",
-        label: "Montana",
-    },
-    {
-        value: "Nebraska",
-        label: "Nebraska",
-    },
-    {
-        value: "Nevada",
-        label: "Nevada",
-    },
-    {
-        value: "New Hampshire",
-        label: "New Hampshire",
-    },
-    {
-        value: "New Jersey",
-        label: "New Jersey",
-    },
-    {
-        value: "New Mexico",
-        label: "New Mexico",
-    },
-    {
-        value: "New York",
-        label: "New York",
-    },
-    {
-        value: "North Carolina",
-        label: "North Carolina",
-    },
-    {
-        value: "North Dakota",
-        label: "North Dakota",
-    },
-    {
-        value: "Ohio",
-        label: "Ohio",
-    },
-    {
-        value: "Oklahoma",
-        label: "Oklahoma",
-    },
-    {
-        value: "Oregon",
-        label: "Oregon",
-    },
-    {
-        value: "Pennsylvania",
-        label: "Pennsylvania",
-    },
-    {
-        value: "Rhode Island",
-        label: "Rhode Island",
-    },
-    {
-        value: "South Carolina",
-        label: "South Carolina",
-    },
-    {
-        value: "South Dakota",
-        label: "South Dakota",
-    },
-    {
-        value: "Tennessee",
-        label: "Tennessee",
-    },
-    {
-        value: "Texas",
-        label: "Texas",
-    },
-    {
-        value: "Utah",
-        label: "Utah",
-    },
-    {
-        value: "Vermont",
-        label: "Vermont",
-    },
-    {
-        value: "Virginia",
-        label: "Virginia",
-    },
-    {
-        value: "Washington",
-        label: "Washington",
-    },
-    {
-        value: "West Virginia",
-        label: "West Virginia",
-    },
-    {
-        value: "Wisconsin",
-        label: "Wisconsin",
-    },
-    {
-        value: "Wyoming",
-        label: "Wyoming",
-    },
-];
+// const locations = [
+//     {
+//         value: "Alabama",
+//         label: "Alabama",
+//     },
+//     {
+//         value: "Alaska",
+//         label: "Alaska",
+//     },
+//     {
+//         value: "Arizona",
+//         label: "Arizona",
+//     },
+//     {
+//         value: "Arkansas",
+//         label: "Arkansas",
+//     },
+//     {
+//         value: "California",
+//         label: "California",
+//     },
+//     {
+//         value: "Colorado",
+//         label: "Colorado",
+//     },
+//     {
+//         value: "Connecticut",
+//         label: "Connecticut",
+//     },
+//     {
+//         value: "Delaware",
+//         label: "Delaware",
+//     },
+//     {
+//         value: "Florida",
+//         label: "Florida",
+//     },
+//     {
+//         value: "Georgia",
+//         label: "Georgia",
+//     },
+//     {
+//         value: "Idaho",
+//         label: "Idaho",
+//     },
+//     {
+//         value: "Illinois",
+//         label: "Illinois",
+//     },
+//     {
+//         value: "Indiana",
+//         label: "Indiana",
+//     },
+//     {
+//         value: "Iowa",
+//         label: "Iowa",
+//     },
+//     {
+//         value: "Kansas",
+//         label: "Kansas",
+//     },
+//     {
+//         value: "Kentucky",
+//         label: "Kentucky",
+//     },
+//     {
+//         value: "Maine",
+//         label: "Maine",
+//     },
+//     {
+//         value: "Maryland",
+//         label: "Maryland",
+//     },
+//     {
+//         value: "Massachusetts",
+//         label: "Massachusetts",
+//     },
+//     {
+//         value: "Michigan",
+//         label: "Michigan",
+//     },
+//     {
+//         value: "Minnesota",
+//         label: "Minnesota",
+//     },
+//     {
+//         value: "Mississippi",
+//         label: "Mississippi",
+//     },
+//     {
+//         value: "Missouri",
+//         label: "Missouri",
+//     },
+//     {
+//         value: "Montana",
+//         label: "Montana",
+//     },
+//     {
+//         value: "Nebraska",
+//         label: "Nebraska",
+//     },
+//     {
+//         value: "Nevada",
+//         label: "Nevada",
+//     },
+//     {
+//         value: "New Hampshire",
+//         label: "New Hampshire",
+//     },
+//     {
+//         value: "New Jersey",
+//         label: "New Jersey",
+//     },
+//     {
+//         value: "New Mexico",
+//         label: "New Mexico",
+//     },
+//     {
+//         value: "New York",
+//         label: "New York",
+//     },
+//     {
+//         value: "North Carolina",
+//         label: "North Carolina",
+//     },
+//     {
+//         value: "North Dakota",
+//         label: "North Dakota",
+//     },
+//     {
+//         value: "Ohio",
+//         label: "Ohio",
+//     },
+//     {
+//         value: "Oklahoma",
+//         label: "Oklahoma",
+//     },
+//     {
+//         value: "Oregon",
+//         label: "Oregon",
+//     },
+//     {
+//         value: "Pennsylvania",
+//         label: "Pennsylvania",
+//     },
+//     {
+//         value: "Rhode Island",
+//         label: "Rhode Island",
+//     },
+//     {
+//         value: "South Carolina",
+//         label: "South Carolina",
+//     },
+//     {
+//         value: "South Dakota",
+//         label: "South Dakota",
+//     },
+//     {
+//         value: "Tennessee",
+//         label: "Tennessee",
+//     },
+//     {
+//         value: "Texas",
+//         label: "Texas",
+//     },
+//     {
+//         value: "Utah",
+//         label: "Utah",
+//     },
+//     {
+//         value: "Vermont",
+//         label: "Vermont",
+//     },
+//     {
+//         value: "Virginia",
+//         label: "Virginia",
+//     },
+//     {
+//         value: "Washington",
+//         label: "Washington",
+//     },
+//     {
+//         value: "West Virginia",
+//         label: "West Virginia",
+//     },
+//     {
+//         value: "Wisconsin",
+//         label: "Wisconsin",
+//     },
+//     {
+//         value: "Wyoming",
+//         label: "Wyoming",
+//     },
+// ];
 const SignUp = () => {
     const [values, setValues] = useState({
         username: "",
@@ -284,16 +284,16 @@ const SignUp = () => {
     //     setValues({ ...values, [name]: value });
     // };
 
-    const handleClickShowPassword = () => {
-        setValues({
-            ...values,
-            showPassword: !values.showPassword,
-        });
-    };
+    // const handleClickShowPassword = () => {
+    //     setValues({
+    //         ...values,
+    //         showPassword: !values.showPassword,
+    //     });
+    // };
 
-    const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-    };
+    // const handleMouseDownPassword = (event) => {
+    //     event.preventDefault();
+    // };
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
