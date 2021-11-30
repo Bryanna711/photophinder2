@@ -79,7 +79,7 @@ const LoginUser = () => {
             Auth.login(data.login.token);
         } catch (err) {
             console.error(err);
-            //   setShowAlert(true);
+            // setShowAlert(true);
         }
 
         setUserFormData({
@@ -138,17 +138,17 @@ const LoginUser = () => {
                                         </p>
                                     ) : ( */}
                                     <form validated={validated} onSubmit={handleFormSubmit}>
-                                        <Alert
+                                        {/* <Alert
                                             dismissible
                                             onClose={() => setShowAlert(false)}
                                             show={showAlert}
                                             variant="danger"
                                         >
                                             Something went wrong with your login credentials!
-                                        </Alert>
-                                        <Grid container direction="column" spacing={2}>
-                                            {/* <Grid item> */}
-                                            {/* <TextField sx={{
+                                        </Alert> */}
+                                        {/* <Grid container direction="column" spacing={2}> */}
+                                        {/* <Grid item> */}
+                                        {/* <TextField sx={{
                                                         color: primary
                                                     }}
                                                         type="email"
@@ -176,7 +176,7 @@ const LoginUser = () => {
                                                         required
                                                     />
                                                 </Grid> */}
-                                            {/* <Grid item>
+                                        {/* <Grid item>
                                                     <Button
                                                         variant="contained"
                                                         color="primary"
@@ -186,7 +186,7 @@ const LoginUser = () => {
                                                         Submit
                                                     </Button>
                                                 </Grid>// */}
-                                        </Grid>
+                                        {/* </Grid> */}
                                         <input
                                             className="form-input"
                                             placeholder="Your email"
@@ -218,7 +218,7 @@ const LoginUser = () => {
                                     <Typography>
                                         {" "}
                                         Don't have an account?
-                                        <Link href="/signup"> Sign Up</Link>
+                                        <Link to="/signup"> Sign Up </Link>
                                     </Typography>
                                 </Grid>
                             </Container>

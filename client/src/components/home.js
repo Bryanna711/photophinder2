@@ -34,7 +34,7 @@ const Home = () => {
 
     const { loading, data } = useQuery(QUERY_ALL_USERS);
     const users = data?.users || [];
-
+    console.log(data)
 
     // const [search, setSearch] = useState('');
     // console.log(search)
@@ -211,6 +211,57 @@ const Home = () => {
                     </Box>
                 </Grid>
                 <Grid item xs={12}>
+                    <Box sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        p: 1,
+                        m: 1,
+                        bgcolor: primaryLight,
+                        borderStyle: "solid",
+                        borderColor: primaryDark,
+                        borderWidth: "5px",
+                        borderRadius: "10px"
+                    }}>
+                        {/* {
+                            users.map((user) => (
+                                <Card sx={{ maxWidth: 345 }} key={user.id}>
+                                    <CardActionArea>
+                                        <CardMedia
+                                            component="img"
+                                            height="140"
+                                            image={user.image}
+                                            alt=""
+                                        />
+                                        <CardContent sx={{
+                                            bgcolor: primaryLight
+                                        }}>
+                                            <Typography gutterBottom variant="h5" component="div">
+                                                Name : {user.companyName}
+                                                Specialty: {user.photoType}
+                                                Location : {user.location}
+                                            </Typography>
+                                            <Link
+                                                to={`/profiles/${user.username}`}
+                                            >
+                                                <Button></Button>
+                                                View more of this photographers information!
+                                            </Link>
+                                        </CardContent>
+                                    </CardActionArea>
+                                    <CardActions>
+                                    </CardActions>
+                                </Card>
+                            ))
+                        } */}
+                        {loading ? (
+                            <div>Loading...</div>
+                        ) : (
+                            <Photographers
+                                users={users} />
+                        )}
+                    </Box>
+                </Grid>
+                {/* <Grid item xs={12}>
                     <Box
                         sx={{
                             display: "flex",
@@ -225,11 +276,10 @@ const Home = () => {
                                 users={users} />
                         )}
                     </Box>
-                </Grid>
+                </Grid> */}
             </Grid>
-        </Container >
+        </Container>
     );
-}
-
+};
 
 export default Home
