@@ -4,7 +4,7 @@
 
 ## Description
 
-Ever wanted to find the perfect photographer to capture life's special moments or promote your photography business to those nearby? Photographer Phinder is the web application for you! Created using most notably React, Express.js, MongoDB, and GraphQL, use this application to search for photographers near you or create a profile to advertise for your business. Business owners can write all information they choose about themselves when signing up to best promote their business. Users can view profiles and even contact or schedule and appointment with the photographer of their choice.
+Ever wanted to find the perfect photographer to capture life's special moments or promote your photography business to those nearby? Photographer Phinder is the web application for you! Created using most notably React, Express.js, MongoDB, and GraphQL, Matierial UI use this application to search for photographers near you or create a profile to advertise for your business. Business owners can write all information they choose about themselves when signing up to best promote their business. Users can view profiles and even contact or schedule and appointment with the photographer of their choice.
 
 ## Table of Contents
 
