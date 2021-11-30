@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-} from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import './App.css';
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import "./App.css";
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
+import Home from "./components/home";
 import Login from "./components/Login";
 import Footer from "./components/Footer";
 // import SearchResults from "./components/SearchResults";
@@ -17,18 +17,18 @@ import Signup from "./components/Signup";
 import Profile from "./components/Profile";
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: "/graphql",
 });
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem("id_token");
   // return the headers to the context so httpLink can read them
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });
