@@ -9,7 +9,7 @@ import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from "./components/Navbar";
-import Home from "./components/home";
+// import Home from "./components/Home";
 import Login from "./components/Login";
 import Footer from "./components/Footer";
 // import SearchResults from "./components/SearchResults";
@@ -48,20 +48,20 @@ function App() {
           <div className="container">
             {/* <Route exact path="/">
               <Home />
-            </Route>
+            </Route> */}
             <Route exact path="/login">
               <Login />
-            </Route> */}
+            </Route>
             <Route exact path="/signup">
               <Signup />
             </Route>
-            {/* <Route exact path="/profile">
+            <Route exact path="/profile">
               <Profile />
             </Route>
             <Route exact path="/profiles/:username">
               <Profile />
             </Route>
-            <Route exact path="/profiles/:state">
+            {/* <Route exact path="/profiles/:state">
               <SearchResults />
             </Route> */}
           </div>

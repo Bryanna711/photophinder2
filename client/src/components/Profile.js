@@ -7,7 +7,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-//import Carousel from "react-material-ui-carousel";
+import Carousel from "react-material-ui-carousel";
 // import CarouselSlide from "react-material-ui-carousel";
 import Link from "@mui/material/Link";
 import { teal, indigo } from "@mui/material/colors";
@@ -42,7 +42,7 @@ const Profile = () => {
 
     const user = data?.me || data?.user || {};
 
-    if (Auth.loggedIn() && Auth.getProfile().data.username === username) {
+    if (Auth.loggedIn() && Auth.getProfile().data._id === username) {
         return <Redirect to="/profile" />;
     }
 
