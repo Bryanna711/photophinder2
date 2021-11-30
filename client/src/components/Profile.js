@@ -11,6 +11,16 @@ import Carousel from "react-material-ui-carousel";
 // import CarouselSlide from "react-material-ui-carousel";
 import Link from "@mui/material/Link";
 import { teal, indigo } from "@mui/material/colors";
+
+// import React from 'react';
+
+import { Redirect, useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import Auth from '../utils/auth';
+import { getDefaultNormalizer } from "@testing-library/react";
+
+
 const primary = indigo[500];
 const primaryLight = indigo[200];
 const primaryDark = indigo[900];
@@ -20,7 +30,35 @@ const secondaryLight = teal[200];
 //This needs handlers for fetch calls to delete buttons need to be pathed to page to update page
 
 
-export default function TitlebarImageList({ photographer }) {
+const Profile = () => {
+    const { username } = useParams();
+
+    const { loading, data } = useQuery(
+        username ? QUERY_USER : QUERY_ME,
+        {
+            variables: { username: username },
+        }
+    );
+
+    const user = data?.me || data?.user || {};
+
+    if (Auth.loggedIn() && Auth.getProfile().data.username === username) {
+        return <Redirect to="/profile" />;
+    }
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (!user?.username) {
+        return (
+            <h4>
+                You need to be logged in to see your profile page. Use the navigation
+                links above to sign up or log in!
+            </h4>
+        );
+    }
+
     return (
         <main>
             <Container maxWidth="xxl" sx={{
@@ -38,7 +76,7 @@ export default function TitlebarImageList({ photographer }) {
                             color: primaryDark
                         }}
                     >
-                        {photographer.companyName}
+                        {user.companyName}
                         {/* Simply Class Photography */}
                     </Typography>
                     <Typography
@@ -49,8 +87,8 @@ export default function TitlebarImageList({ photographer }) {
                         sx={{
                             color: primaryDark
                         }}
-                    > {photographer.bio}
-                        Reservation Fee : {photographer.reservationCost}
+                    > {user.bio}
+                        Reservation Fee : {user.reservationCost}
                         {/* Hello!My name is Amy Olson, and I grew up in a small town in
             Southeastern Minnesota.I currently live just north of Rochester,
             Minnesota with my husband.My passion for photography began at a
@@ -83,7 +121,7 @@ export default function TitlebarImageList({ photographer }) {
                             sx={{
                                 bgcolor: primaryDark
                             }}
-                            href={photographer.link}
+                            href={user.link}
                             variant="contained">More of my work</Button>
                         <Button
                             sx={{
@@ -198,3 +236,5 @@ const itemData = [
         author: "@southside_customs",
     },
 ];
+
+export default Profile
