@@ -28,50 +28,63 @@ const Photographers = ({ users }) => {
         return <h3>No photgraphers Yet</h3>;
     }
     return (
-        <Grid item xs={12}>
-            <Box sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                p: 1,
-                m: 1,
-                bgcolor: primaryLight,
-                borderStyle: "solid",
-                borderColor: primaryDark,
-                borderWidth: "5px",
-                borderRadius: "10px"
-            }}>
-                {users &&
-                    users.map((user) => (
-                        <Card sx={{ maxWidth: 345 }} key={user._id}>
-                            <CardActionArea>
-                                <CardMedia
-                                    component="img"
-                                    height="140"
-                                    image={user.image}
-                                    alt=""
-                                />
-                                <CardContent sx={{
-                                    bgcolor: primaryLight
-                                }}>
-                                    <Typography gutterBottom variant="h5" component="div">
-                                        Name : {user.companyName}
-                                        Specialty: {user.photoType}
-                                        Location : {user.location}
-                                    </Typography>
-                                    <Link
-                                        to={`/profiles/${user.username}`}
-                                    >
-                                        <Button></Button>
-                                        View more of this photographers information!
-                                    </Link>
-                                </CardContent>
-                            </CardActionArea>
-                            <CardActions>
-                            </CardActions>
-                        </Card>
-                    ))
-                }
-            </Box>
+        <Grid container rowSpacing={1} columnSpacing={{ xs: 2, sm: 4, md: 6 }}>
+            <Grid item xs={12}>
+                <Box sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    p: 1,
+                    m: 1,
+                    bgcolor: primaryLight,
+                    borderStyle: "solid",
+                    borderColor: primaryDark,
+                    borderWidth: "5px",
+                    borderRadius: "10px"
+                }}>
+                    {users &&
+                        users.map((user) => (
+                            <Card sx={{
+                                maxWidth: 345,
+                                bgcolor: secondaryLight,
+                                borderColor: primaryDark,
+                                borderWidth: "5px",
+                                borderRadius: "10px",
+                                margin: "5px"
+                            }} key={user._id}>
+                                <CardActionArea>
+                                    <CardMedia
+                                        component="img"
+                                        height="140"
+                                        image={user.image}
+                                        alt=""
+                                    />
+                                    <CardContent sx={{
+                                        bgcolor: secondaryLight
+                                    }}>
+                                        <Typography gutterBottom variant="h6" component="div">
+                                            Name : {user.companyName}
+                                        </Typography>
+                                        <Typography gutterBottom variant="h6" component="div">
+                                            Specialty: {user.photoType}
+                                        </Typography>
+                                        <Typography gutterBottom variant="h6" component="div">
+                                            Location : {user.location}
+                                        </Typography>
+                                        <Link
+                                            to={`/profiles/${user.username}`}
+                                        >
+                                            {/* <Button></Button> */}
+                                            View more of this photographers information!
+                                        </Link>
+                                    </CardContent>
+                                </CardActionArea>
+                                <CardActions>
+                                </CardActions>
+                            </Card>
+                        ))
+                    }
+                </Box>
+            </Grid>
         </Grid>)
 };
 

@@ -212,6 +212,7 @@ const Profile = () => {
                         paddingLeft: 90,
                         m: 5
                     }}>
+                    <img src={user.image}></img>
                     {/* <Carousel>
                         {itemData.map((item) => (
                             <div>

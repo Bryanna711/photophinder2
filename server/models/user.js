@@ -43,7 +43,6 @@ const photographerSchema = new Schema(
     },
     image: {
       type: String,
-      required: true,
     }
   });
 
