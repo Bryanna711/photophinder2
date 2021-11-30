@@ -180,7 +180,7 @@ const Home = () => {
                                 or are looking to update your headshots, or maybe Fido needs a new portrait on the wall, let Photographer Phinder
                                 help you find that perfect person who will imortalize your memories!</p>
 
-                            <p> Not sure how to start?Photographer Phinder can help narrow the field, just let us know either what state you are looking
+                            <p> Not sure how to start? Photographer Phinder can help narrow the field, just let us know either what state you are looking
                                 to find a talented photographer or what type of photography you're looking for. We categorize our photographers by their identified
                                 specialty, choose from:
                             </p>
