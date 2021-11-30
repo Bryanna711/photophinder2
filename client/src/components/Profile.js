@@ -14,10 +14,10 @@ import { teal, indigo } from "@mui/material/colors";
 
 // import React from 'react';
 
-import { Redirect, useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
-import { QUERY_USER, QUERY_ME } from '../utils/queries';
-import Auth from '../utils/auth';
+import { Redirect, useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import { QUERY_USER, QUERY_ME } from "../utils/queries";
+import Auth from "../utils/auth";
 import { getDefaultNormalizer } from "@testing-library/react";
 
 // var Mailto = require('react-mailto');
@@ -92,16 +92,12 @@ const secondaryLight = teal[200];
 
 //This needs handlers for fetch calls to delete buttons need to be pathed to page to update page
 
-
 const Profile = () => {
     const { username } = useParams();
 
-    const { loading, data } = useQuery(
-        username ? QUERY_USER : QUERY_ME,
-        {
-            variables: { username: username },
-        }
-    );
+    const { loading, data } = useQuery(username ? QUERY_USER : QUERY_ME, {
+        variables: { username: username },
+    });
 
     const user = data?.me || data?.user || {};
 
@@ -125,9 +121,12 @@ const Profile = () => {
 
     return (
         <main>
-            <Container maxWidth="xxl" sx={{
-                bgcolor: secondaryLight,
-            }}>
+            <Container
+                maxWidth="xxl"
+                sx={{
+                    bgcolor: secondaryLight,
+                }}
+            >
                 <Box>
                     <Typography
                         component="h1"
@@ -137,7 +136,7 @@ const Profile = () => {
                         gutterBottom
                         paddingTop="20px"
                         sx={{
-                            color: primaryDark
+                            color: primaryDark,
                         }}
                     >
                         {user.companyName}
@@ -149,23 +148,15 @@ const Profile = () => {
                         color="text.secondary"
                         paragraph
                         sx={{
-                            color: primaryDark
+                            color: primaryDark,
                         }}
-                    > {user.bio}
-                        Reservation Fee : {user.reservationCost}
-                        {/* Hello!My name is Amy Olson, and I grew up in a small town in
-            Southeastern Minnesota.I currently live just north of Rochester,
-            Minnesota with my husband.My passion for photography began at a
-            young age when I was constantly taking photos of family and friends.
-            I finally made it a career, and after several years of experience in
-            portrait photography, Simply Class was established in 2010. I
-            specialize in natural light photography for all types of sessions
-            including weddings, seniors, families, and newborns.I thrive on the
-            excitement of each event, capturing those perfect and special
-            moments with creativity and class.I offer high-end digital
-            photography and am available nationwide and for destination
-            weddings.Please contact me by phone or email for more information.
-            I'd love to enjoy a cup of coffee with you to discuss details. */}
+                    >
+                        {" "}
+                        {user.bio}
+                        &nbsp;
+                        <Typography variant="h5" color="inherit" noWrap>
+                            Reservation Fee : {user.reservationCost}
+                        </Typography>
                     </Typography>
                     <Stack
                         sx={{ pt: 4 }}
@@ -173,20 +164,23 @@ const Profile = () => {
                         spacing={2}
                         justifyContent="center"
                     >
-                        <Button sx={{
+                        {/* <Button sx={{
                             bgcolor: primaryLight,
                             color: primaryDark,
                             border: primaryDark,
                             borderStyle: "solid",
                             borderWidth: "1px",
                         }} href="/update"
-                            variant="outlined">Edit the post</Button>
+                            variant="outlined">Edit the post</Button> */}
                         <Button
                             sx={{
-                                bgcolor: primaryDark
+                                bgcolor: primaryDark,
                             }}
                             href={user.link}
-                            variant="contained">More of my work</Button>
+                            variant="contained"
+                        >
+                            More of my work
+                        </Button>
                         <Button
                             sx={{
                                 bgcolor: primaryLight,
@@ -195,7 +189,9 @@ const Profile = () => {
                                 borderStyle: "solid",
                                 borderWidth: "1px",
                             }}
-                            variant="outlined">
+                            variant="outlined"
+                        >
+                            Connect with me
                             {/* <Mailto email={user.email}>
                                 Connect with me </Mailto> */}
                         </Button>
@@ -237,10 +233,8 @@ const Profile = () => {
                     </Carousel> */}
                 </Box>
             </Container>
-        </main >
+        </main>
     );
-}
+};
 
-
-
-export default Profile
+export default Profile;
