@@ -240,6 +240,7 @@ const Profile = () => {
                     sx={{
                         display: "flex",
                         justifyContent: "center",
+                        marginLeft: 12
                     }}>
                     <img className="profileImg" src={user.image} alt="Image from Photographer"></img>
                     {/* <Carousel>
